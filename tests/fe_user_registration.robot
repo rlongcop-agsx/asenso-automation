@@ -108,7 +108,7 @@ Test Case 9: Validate Consent Checkbox
     asenso_app.Click the Continue button        ${signup_submit}
     asenso_app.Validate text displayed          We've sent an OTP
 
-Test Case 9: Validate User Registration
+Test Case 10: Validate User Registration
     [Documentation]    Validate that the user can successfully submit the personal information details 
     [Tags]             registration
     ...                UR-TC-013
