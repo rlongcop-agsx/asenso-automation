@@ -1,0 +1,1734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.9 on linux)" generated="2025-03-03T02:14:20.950365" rpa="false" schemaversion="5">
+<suite id="s1" name="Fe User Registration" source="/home/runner/work/asenso-automation/asenso-automation/tests/fe_user_registration.robot">
+<test id="s1-t1" name="Test Case 1: Validate `Tell us about yourself` text displayed" line="11">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2025-03-03T02:14:21.121551" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T02:14:21.121717" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<arg>logs/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2025-03-03T02:14:21.121405" elapsed="0.000375"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>logs/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-03T02:14:21.121936" elapsed="0.000193"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:21.122430" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:21.122265" elapsed="10.288305"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-03T02:14:31.410823" elapsed="0.017366"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>Main web setup</doc>
+<status status="PASS" start="2025-03-03T02:14:21.120629" elapsed="10.307708"/>
+</kw>
+<kw name="Navigate to the login page" owner="asenso_app">
+<kw name="Navigate to login page" owner="login_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:31.429698" level="INFO">Opening url 'https://asenso-webapp.amihan.itg.nmblr.dev/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:31.429561" elapsed="1.958443"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-03-03T02:14:31.429256" elapsed="1.958944"/>
+</kw>
+<kw name="Verify page loaded" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:33.388921" elapsed="0.116851"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:33.388481" elapsed="0.117417"/>
+</kw>
+<arg>${MAIN_URL}</arg>
+<arg>${login_form}</arg>
+<status status="PASS" start="2025-03-03T02:14:31.428689" elapsed="2.077275"/>
+</kw>
+<kw name="Click the signup button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:33.506829" elapsed="0.027314"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:33.506567" elapsed="0.027670"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:33.534899" level="INFO">Clicking element 'xpath=(//a[contains(@href, 'create-account')])[2]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:33.534708" elapsed="0.133310"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:33.534411" elapsed="0.133752"/>
+</kw>
+<arg>${signup_btn}</arg>
+<status status="PASS" start="2025-03-03T02:14:33.506223" elapsed="0.162003"/>
+</kw>
+<kw name="Validate text displayed" owner="asenso_app">
+<kw name="Validate text displayed" owner="signup_page">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${expected_text}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-03T02:14:33.669060" elapsed="0.420906"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:34.096349" level="INFO">Current page contains text 'Tell us about yourself'.</msg>
+<arg>${expected_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-03T02:14:34.090196" elapsed="0.006219"/>
+</kw>
+<arg>${expected_text}</arg>
+<status status="PASS" start="2025-03-03T02:14:33.668749" elapsed="0.427747"/>
+</kw>
+<arg>Tell us about yourself</arg>
+<status status="PASS" start="2025-03-03T02:14:33.668431" elapsed="0.428123"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:34.211664" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-03T02:14:34.097120" elapsed="0.114692"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-03T02:14:34.212060" elapsed="0.076026"/>
+</kw>
+<doc>Main web teardown</doc>
+<status status="PASS" start="2025-03-03T02:14:34.096795" elapsed="0.191404"/>
+</kw>
+<doc>Validate that the user should be navigated to the registration page after clicking the 'Sign Up' button.</doc>
+<tag>registration</tag>
+<tag>UR-TC-001</tag>
+<status status="PASS" start="2025-03-03T02:14:21.119693" elapsed="13.168565"/>
+</test>
+<test id="s1-t2" name="Test Case 2: PH Citizenship selection" line="20">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2025-03-03T02:14:34.289576" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T02:14:34.289713" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<arg>logs/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2025-03-03T02:14:34.289454" elapsed="0.000312"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>logs/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-03T02:14:34.289889" elapsed="0.000187"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:34.290364" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:34.290207" elapsed="0.332237"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-03T02:14:34.622723" elapsed="0.017000"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>Main web setup</doc>
+<status status="PASS" start="2025-03-03T02:14:34.289163" elapsed="0.350677"/>
+</kw>
+<kw name="Navigate to the login page" owner="asenso_app">
+<kw name="Navigate to login page" owner="login_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:34.640985" level="INFO">Opening url 'https://asenso-webapp.amihan.itg.nmblr.dev/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:34.640787" elapsed="1.639891"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-03-03T02:14:34.640504" elapsed="1.640357"/>
+</kw>
+<kw name="Verify page loaded" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:36.281735" elapsed="0.028125"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.281206" elapsed="0.028769"/>
+</kw>
+<arg>${MAIN_URL}</arg>
+<arg>${login_form}</arg>
+<status status="PASS" start="2025-03-03T02:14:34.640110" elapsed="1.669953"/>
+</kw>
+<kw name="Click the signup button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:36.310857" elapsed="0.013565"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.310601" elapsed="0.013901"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:36.325108" level="INFO">Clicking element 'xpath=(//a[contains(@href, 'create-account')])[2]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:36.324908" elapsed="0.053416"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.324644" elapsed="0.053809"/>
+</kw>
+<arg>${signup_btn}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.310273" elapsed="0.068247"/>
+</kw>
+<kw name="Click the Citizenship dropdown" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:36.379422" elapsed="0.424689"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.379156" elapsed="0.425069"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:36.805111" level="INFO">Clicking element 'xpath=//*[contains(text(),'Citizenship')]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:36.804824" elapsed="0.046395"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.804425" elapsed="0.046932"/>
+</kw>
+<arg>${citizenship_dropdown}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.378759" elapsed="0.472662"/>
+</kw>
+<kw name="Select Citizenship" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:36.852236" elapsed="0.013089"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.851959" elapsed="0.013446"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:36.866010" level="INFO">Clicking element 'xpath=//*[contains(text(),'PH')]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:36.865822" elapsed="0.072634"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.865547" elapsed="0.073088"/>
+</kw>
+<arg>${citizenship_ph}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.851629" elapsed="0.087111"/>
+</kw>
+<kw name="Validate text displayed" owner="asenso_app">
+<kw name="Validate text displayed" owner="signup_page">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${expected_text}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-03T02:14:36.939928" elapsed="0.010001"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:36.958156" level="INFO">Current page contains text 'PH'.</msg>
+<arg>${expected_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-03T02:14:36.950145" elapsed="0.008083"/>
+</kw>
+<arg>${expected_text}</arg>
+<status status="PASS" start="2025-03-03T02:14:36.939536" elapsed="0.018775"/>
+</kw>
+<arg>PH</arg>
+<status status="PASS" start="2025-03-03T02:14:36.939059" elapsed="0.019312"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:37.079254" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-03T02:14:36.958888" elapsed="0.120471"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-03T02:14:37.079541" elapsed="0.059580"/>
+</kw>
+<doc>Main web teardown</doc>
+<status status="PASS" start="2025-03-03T02:14:36.958620" elapsed="0.180620"/>
+</kw>
+<doc>Validate that the user can successfully select PH in citizenship</doc>
+<tag>registration</tag>
+<tag>UR-TC-003</tag>
+<status status="PASS" start="2025-03-03T02:14:34.288601" elapsed="2.850701"/>
+</test>
+<test id="s1-t3" name="Test Case 3: US Citizenship selection" line="31">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2025-03-03T02:14:37.140569" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T02:14:37.140700" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<arg>logs/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2025-03-03T02:14:37.140449" elapsed="0.000304"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>logs/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-03T02:14:37.140870" elapsed="0.000183"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:37.141396" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:37.141230" elapsed="0.335645"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-03T02:14:37.477181" elapsed="0.017140"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>Main web setup</doc>
+<status status="PASS" start="2025-03-03T02:14:37.140161" elapsed="0.354279"/>
+</kw>
+<kw name="Navigate to the login page" owner="asenso_app">
+<kw name="Navigate to login page" owner="login_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:37.495537" level="INFO">Opening url 'https://asenso-webapp.amihan.itg.nmblr.dev/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:37.495404" elapsed="1.617863"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-03-03T02:14:37.495107" elapsed="1.618326"/>
+</kw>
+<kw name="Verify page loaded" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.113992" elapsed="0.025967"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.113636" elapsed="0.026457"/>
+</kw>
+<arg>${MAIN_URL}</arg>
+<arg>${login_form}</arg>
+<status status="PASS" start="2025-03-03T02:14:37.494670" elapsed="1.645485"/>
+</kw>
+<kw name="Click the signup button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.140912" elapsed="0.014369"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.140670" elapsed="0.014725"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:39.156100" level="INFO">Clicking element 'xpath=(//a[contains(@href, 'create-account')])[2]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.155887" elapsed="0.049655"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.155582" elapsed="0.050117"/>
+</kw>
+<arg>${signup_btn}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.140357" elapsed="0.065426"/>
+</kw>
+<kw name="Click the Citizenship dropdown" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.206769" elapsed="0.424528"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.206511" elapsed="0.424904"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:39.632132" level="INFO">Clicking element 'xpath=//*[contains(text(),'Citizenship')]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.631924" elapsed="0.044254"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.631615" elapsed="0.044708"/>
+</kw>
+<arg>${citizenship_dropdown}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.206088" elapsed="0.470333"/>
+</kw>
+<kw name="Select Citizenship" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.677356" elapsed="0.013822"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.677069" elapsed="0.014264"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:39.692092" level="INFO">Clicking element 'xpath=//*[contains(text(),'US')]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.691878" elapsed="0.046550"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.691562" elapsed="0.047039"/>
+</kw>
+<arg>${citizenship_us}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.676680" elapsed="0.062008"/>
+</kw>
+<kw name="Validate text displayed" owner="asenso_app">
+<kw name="Validate text displayed" owner="signup_page">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${expected_text}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.739754" elapsed="0.009661"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:39.756636" level="INFO">Current page contains text 'US'.</msg>
+<arg>${expected_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.749602" elapsed="0.007103"/>
+</kw>
+<arg>${expected_text}</arg>
+<status status="PASS" start="2025-03-03T02:14:39.739387" elapsed="0.017400"/>
+</kw>
+<arg>US</arg>
+<status status="PASS" start="2025-03-03T02:14:39.738969" elapsed="0.017876"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:39.879202" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.757362" elapsed="0.121945"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.879491" elapsed="0.060028"/>
+</kw>
+<doc>Main web teardown</doc>
+<status status="PASS" start="2025-03-03T02:14:39.757100" elapsed="0.182536"/>
+</kw>
+<doc>Validate that the user can successfully select PH in citizenship</doc>
+<tag>registration</tag>
+<tag>UR-TC-004</tag>
+<status status="PASS" start="2025-03-03T02:14:37.139639" elapsed="2.800053"/>
+</test>
+<test id="s1-t4" name="Test Case 4: Validate Inputed First Name" line="42">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2025-03-03T02:14:39.941380" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T02:14:39.941561" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<arg>logs/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.941207" elapsed="0.000441"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>logs/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.941800" elapsed="0.000161"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:39.942336" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:39.942136" elapsed="0.325659"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-03T02:14:40.268001" elapsed="0.013220"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>Main web setup</doc>
+<status status="PASS" start="2025-03-03T02:14:39.940736" elapsed="0.340576"/>
+</kw>
+<kw name="Navigate to the login page" owner="asenso_app">
+<kw name="Navigate to login page" owner="login_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:40.282341" level="INFO">Opening url 'https://asenso-webapp.amihan.itg.nmblr.dev/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:40.282221" elapsed="1.660784"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-03-03T02:14:40.281945" elapsed="1.661201"/>
+</kw>
+<kw name="Verify page loaded" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:41.943657" elapsed="0.031845"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:41.943342" elapsed="0.032322"/>
+</kw>
+<arg>${MAIN_URL}</arg>
+<arg>${login_form}</arg>
+<status status="PASS" start="2025-03-03T02:14:40.281520" elapsed="1.694207"/>
+</kw>
+<kw name="Click the signup button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:41.976538" elapsed="0.013822"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:41.976292" elapsed="0.014157"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:41.991101" level="INFO">Clicking element 'xpath=(//a[contains(@href, 'create-account')])[2]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:41.990893" elapsed="0.049181"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:41.990609" elapsed="0.049615"/>
+</kw>
+<arg>${signup_btn}</arg>
+<status status="PASS" start="2025-03-03T02:14:41.975933" elapsed="0.064360"/>
+</kw>
+<kw name="Enter" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:42.041174" elapsed="0.424949"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:42.040872" elapsed="0.425364"/>
+</kw>
+<kw name="Enter credential" owner="signup_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:42.466974" level="INFO">Typing text 'R,ed-en,' into text field 'css=input#firstName'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:42.466771" elapsed="0.166937"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:42.466436" elapsed="0.167401"/>
+</kw>
+<arg>${first_name}</arg>
+<arg>R,ed-en,</arg>
+<status status="PASS" start="2025-03-03T02:14:42.040506" elapsed="0.593395"/>
+</kw>
+<kw name="Text should be displayed" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:42.634730" elapsed="0.016452"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:42.634482" elapsed="0.016808"/>
+</kw>
+<kw name="Validate value displayed" owner="signup_page">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:42.661308" level="INFO">${value} = R,ed-en,</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:42.651820" elapsed="0.009526"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${value}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-03T02:14:42.661494" elapsed="0.000214"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:42.651481" elapsed="0.010298"/>
+</kw>
+<arg>${first_name}</arg>
+<arg>R,ed-en,</arg>
+<status status="PASS" start="2025-03-03T02:14:42.634139" elapsed="0.027698"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:42.763508" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-03T02:14:42.662313" elapsed="0.101302"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-03T02:14:42.763799" elapsed="0.059536"/>
+</kw>
+<doc>Main web teardown</doc>
+<status status="PASS" start="2025-03-03T02:14:42.662068" elapsed="0.161383"/>
+</kw>
+<doc>Validate that the user can input their first name</doc>
+<tag>registration</tag>
+<tag>UR-TC-007</tag>
+<status status="PASS" start="2025-03-03T02:14:39.940058" elapsed="2.883449"/>
+</test>
+<test id="s1-t5" name="Test Case 5: Validate Inputed Middle Name" line="54">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2025-03-03T02:14:42.824697" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T02:14:42.824832" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<arg>logs/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2025-03-03T02:14:42.824569" elapsed="0.000316"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>logs/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-03T02:14:42.824999" elapsed="0.000177"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:42.825668" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:42.825297" elapsed="0.338595"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-03T02:14:43.164134" elapsed="0.013664"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>Main web setup</doc>
+<status status="PASS" start="2025-03-03T02:14:42.824287" elapsed="0.353634"/>
+</kw>
+<kw name="Navigate to the login page" owner="asenso_app">
+<kw name="Navigate to login page" owner="login_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:43.179446" level="INFO">Opening url 'https://asenso-webapp.amihan.itg.nmblr.dev/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:43.179258" elapsed="1.637276"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-03-03T02:14:43.178779" elapsed="1.637877"/>
+</kw>
+<kw name="Verify page loaded" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:44.817207" elapsed="0.027977"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:44.816857" elapsed="0.028442"/>
+</kw>
+<arg>${MAIN_URL}</arg>
+<arg>${login_form}</arg>
+<status status="PASS" start="2025-03-03T02:14:43.178239" elapsed="1.667120"/>
+</kw>
+<kw name="Click the signup button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:44.846182" elapsed="0.013918"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:44.845877" elapsed="0.014310"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:44.860836" level="INFO">Clicking element 'xpath=(//a[contains(@href, 'create-account')])[2]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:44.860664" elapsed="0.048514"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:44.860395" elapsed="0.048925"/>
+</kw>
+<arg>${signup_btn}</arg>
+<status status="PASS" start="2025-03-03T02:14:44.845561" elapsed="0.063827"/>
+</kw>
+<kw name="Enter" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:44.910271" elapsed="0.423877"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:44.909979" elapsed="0.424286"/>
+</kw>
+<kw name="Enter credential" owner="signup_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:45.335002" level="INFO">Typing text 'C.' into text field 'css=input#middleName'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.334802" elapsed="0.071705"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:45.334463" elapsed="0.072221"/>
+</kw>
+<arg>${middle_name}</arg>
+<arg>C.</arg>
+<status status="PASS" start="2025-03-03T02:14:44.909621" elapsed="0.497157"/>
+</kw>
+<kw name="Text should be displayed" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.407797" elapsed="0.010477"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:45.407525" elapsed="0.010830"/>
+</kw>
+<kw name="Validate value displayed" owner="signup_page">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:45.428558" level="INFO">${value} = C.</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.418805" elapsed="0.009793"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${value}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.428754" elapsed="0.000218"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:45.418507" elapsed="0.010567"/>
+</kw>
+<arg>${middle_name}</arg>
+<arg>C.</arg>
+<status status="PASS" start="2025-03-03T02:14:45.407107" elapsed="0.022030"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:45.530179" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.429587" elapsed="0.100700"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.530468" elapsed="0.059729"/>
+</kw>
+<doc>Main web teardown</doc>
+<status status="PASS" start="2025-03-03T02:14:45.429341" elapsed="0.160973"/>
+</kw>
+<doc>Validate that the user can input their middle name</doc>
+<tag>registration</tag>
+<tag>UR-TC-008</tag>
+<status status="PASS" start="2025-03-03T02:14:42.823819" elapsed="2.766553"/>
+</test>
+<test id="s1-t6" name="Test Case 6.Validate Inputed Last Name" line="66">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2025-03-03T02:14:45.591555" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T02:14:45.591689" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<arg>logs/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.591438" elapsed="0.000304"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>logs/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.591855" elapsed="0.000152"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:45.592321" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.592167" elapsed="0.336043"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.928484" elapsed="0.015043"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>Main web setup</doc>
+<status status="PASS" start="2025-03-03T02:14:45.591156" elapsed="0.352487"/>
+</kw>
+<kw name="Navigate to the login page" owner="asenso_app">
+<kw name="Navigate to login page" owner="login_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:45.944831" level="INFO">Opening url 'https://asenso-webapp.amihan.itg.nmblr.dev/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:45.944703" elapsed="1.663126"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-03-03T02:14:45.944425" elapsed="1.663528"/>
+</kw>
+<kw name="Verify page loaded" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:47.608508" elapsed="0.028409"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:47.608177" elapsed="0.028876"/>
+</kw>
+<arg>${MAIN_URL}</arg>
+<arg>${login_form}</arg>
+<status status="PASS" start="2025-03-03T02:14:45.943895" elapsed="1.693222"/>
+</kw>
+<kw name="Click the signup button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:47.638002" elapsed="0.014178"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:47.637695" elapsed="0.014581"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:47.652915" level="INFO">Clicking element 'xpath=(//a[contains(@href, 'create-account')])[2]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:47.652734" elapsed="0.049206"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:47.652440" elapsed="0.049651"/>
+</kw>
+<arg>${signup_btn}</arg>
+<status status="PASS" start="2025-03-03T02:14:47.637322" elapsed="0.064834"/>
+</kw>
+<kw name="Enter" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:47.702956" elapsed="0.428213"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:47.702703" elapsed="0.428680"/>
+</kw>
+<kw name="Enter credential" owner="signup_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:48.132394" level="INFO">Typing text 'Longcop' into text field 'css=input#lastName'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.132118" elapsed="0.081319"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:48.131640" elapsed="0.081924"/>
+</kw>
+<arg>${last_name}</arg>
+<arg>Longcop</arg>
+<status status="PASS" start="2025-03-03T02:14:47.702358" elapsed="0.511270"/>
+</kw>
+<kw name="Text should be displayed" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.214610" elapsed="0.013872"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:48.214271" elapsed="0.014311"/>
+</kw>
+<kw name="Validate value displayed" owner="signup_page">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:48.239120" level="INFO">${value} = Longcop</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.229291" elapsed="0.009873"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${value}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.239371" elapsed="0.000266"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:48.228794" elapsed="0.010917"/>
+</kw>
+<arg>${last_name}</arg>
+<arg>Longcop</arg>
+<status status="PASS" start="2025-03-03T02:14:48.213840" elapsed="0.025928"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:48.346698" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.240254" elapsed="0.106576"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.347021" elapsed="0.059337"/>
+</kw>
+<doc>Main web teardown</doc>
+<status status="PASS" start="2025-03-03T02:14:48.239979" elapsed="0.166492"/>
+</kw>
+<doc>Validate that the user can input their last name</doc>
+<tag>registration</tag>
+<tag>UR-TC-009</tag>
+<status status="PASS" start="2025-03-03T02:14:45.590670" elapsed="2.815854"/>
+</test>
+<test id="s1-t7" name="Test Case 7: Validate Inputed Suffix" line="78">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2025-03-03T02:14:48.407692" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T02:14:48.407822" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<arg>logs/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.407574" elapsed="0.000300"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>logs/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.407988" elapsed="0.000187"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:48.408445" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.408301" elapsed="0.345568"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.754123" elapsed="0.015568"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>Main web setup</doc>
+<status status="PASS" start="2025-03-03T02:14:48.407290" elapsed="0.362517"/>
+</kw>
+<kw name="Navigate to the login page" owner="asenso_app">
+<kw name="Navigate to login page" owner="login_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:48.770939" level="INFO">Opening url 'https://asenso-webapp.amihan.itg.nmblr.dev/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:48.770751" elapsed="1.623543"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-03-03T02:14:48.770462" elapsed="1.623953"/>
+</kw>
+<kw name="Verify page loaded" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:50.394974" elapsed="0.027239"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:50.394614" elapsed="0.027707"/>
+</kw>
+<arg>${MAIN_URL}</arg>
+<arg>${login_form}</arg>
+<status status="PASS" start="2025-03-03T02:14:48.770067" elapsed="1.652316"/>
+</kw>
+<kw name="Click the signup button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:50.423269" elapsed="0.014004"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:50.422946" elapsed="0.014429"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:50.438103" level="INFO">Clicking element 'xpath=(//a[contains(@href, 'create-account')])[2]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:50.437864" elapsed="0.049042"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:50.437558" elapsed="0.049496"/>
+</kw>
+<arg>${signup_btn}</arg>
+<status status="PASS" start="2025-03-03T02:14:50.422585" elapsed="0.064543"/>
+</kw>
+<kw name="Enter" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:50.488228" elapsed="0.424520"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:50.487846" elapsed="0.425022"/>
+</kw>
+<kw name="Enter credential" owner="signup_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:50.913682" level="INFO">Typing text 'Ja-i,mes.' into text field 'css=input#suffix'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:50.913463" elapsed="0.080775"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:50.913100" elapsed="0.081327"/>
+</kw>
+<arg>${suffix}</arg>
+<arg>Ja-i,mes.</arg>
+<status status="PASS" start="2025-03-03T02:14:50.487337" elapsed="0.507280"/>
+</kw>
+<kw name="Text should be displayed" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:50.995553" elapsed="0.010974"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:50.995284" elapsed="0.011332"/>
+</kw>
+<kw name="Validate value displayed" owner="signup_page">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:51.016401" level="INFO">${value} = Ja-i,mes.</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:51.007126" elapsed="0.009311"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${value}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-03T02:14:51.016573" elapsed="0.000200"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:51.006781" elapsed="0.010060"/>
+</kw>
+<arg>${suffix}</arg>
+<arg>Ja-i,mes.</arg>
+<status status="PASS" start="2025-03-03T02:14:50.994873" elapsed="0.022025"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:51.146476" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-03T02:14:51.017362" elapsed="0.129222"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-03T02:14:51.146765" elapsed="0.059624"/>
+</kw>
+<doc>Main web teardown</doc>
+<status status="PASS" start="2025-03-03T02:14:51.017123" elapsed="0.189382"/>
+</kw>
+<doc>Validate that the user can input their suffix</doc>
+<tag>registration</tag>
+<tag>UR-TC-010</tag>
+<status status="PASS" start="2025-03-03T02:14:48.406816" elapsed="2.799743"/>
+</test>
+<test id="s1-t8" name="Test Case 8: Validate Inputed Email" line="90">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2025-03-03T02:14:51.207747" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T02:14:51.207874" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<arg>logs/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2025-03-03T02:14:51.207631" elapsed="0.000296"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>logs/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-03T02:14:51.208065" elapsed="0.000158"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:51.208489" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:51.208346" elapsed="0.325944"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-03T02:14:51.534498" elapsed="0.013752"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>Main web setup</doc>
+<status status="PASS" start="2025-03-03T02:14:51.207351" elapsed="0.341005"/>
+</kw>
+<kw name="Navigate to the login page" owner="asenso_app">
+<kw name="Navigate to login page" owner="login_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:51.549353" level="INFO">Opening url 'https://asenso-webapp.amihan.itg.nmblr.dev/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:51.549227" elapsed="1.602006"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-03-03T02:14:51.548940" elapsed="1.602465"/>
+</kw>
+<kw name="Verify page loaded" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.152205" elapsed="0.030742"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:53.151701" elapsed="0.031380"/>
+</kw>
+<arg>${MAIN_URL}</arg>
+<arg>${login_form}</arg>
+<status status="PASS" start="2025-03-03T02:14:51.548575" elapsed="1.634571"/>
+</kw>
+<kw name="Click the signup button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.183929" elapsed="0.013988"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:53.183676" elapsed="0.014335"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:53.198670" level="INFO">Clicking element 'xpath=(//a[contains(@href, 'create-account')])[2]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.198492" elapsed="0.049242"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:53.198204" elapsed="0.049652"/>
+</kw>
+<arg>${signup_btn}</arg>
+<status status="PASS" start="2025-03-03T02:14:53.183351" elapsed="0.064567"/>
+</kw>
+<kw name="Enter" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.248737" elapsed="0.013482"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:53.248488" elapsed="0.013818"/>
+</kw>
+<kw name="Enter credential" owner="signup_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:53.262954" level="INFO">Typing text 'rlongcop@agsx.net' into text field 'css=input#email'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.262758" elapsed="0.093786"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:53.262457" elapsed="0.094248"/>
+</kw>
+<arg>${email}</arg>
+<arg>rlongcop@agsx.net</arg>
+<status status="PASS" start="2025-03-03T02:14:53.248148" elapsed="0.108644"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:53.462653" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.357554" elapsed="0.105210"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.462958" elapsed="0.059391"/>
+</kw>
+<doc>Main web teardown</doc>
+<status status="PASS" start="2025-03-03T02:14:53.357166" elapsed="0.165354"/>
+</kw>
+<doc>Validate that the user can input their email</doc>
+<tag>registration</tag>
+<tag>UR-TC-011</tag>
+<status status="PASS" start="2025-03-03T02:14:51.206866" elapsed="2.315713"/>
+</test>
+<test id="s1-t9" name="Test Case 9: Validate Consent Checkbox" line="100">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2025-03-03T02:14:53.523808" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T02:14:53.523934" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<arg>logs/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.523688" elapsed="0.000297"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>logs/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.524134" elapsed="0.000158"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:53.524559" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.524414" elapsed="0.343561"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.868214" elapsed="0.013419"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>Main web setup</doc>
+<status status="PASS" start="2025-03-03T02:14:53.523400" elapsed="0.358337"/>
+</kw>
+<kw name="Navigate to the login page" owner="asenso_app">
+<kw name="Navigate to login page" owner="login_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:53.882773" level="INFO">Opening url 'https://asenso-webapp.amihan.itg.nmblr.dev/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:53.882648" elapsed="1.614628"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-03-03T02:14:53.882383" elapsed="1.615014"/>
+</kw>
+<kw name="Verify page loaded" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:55.497977" elapsed="0.026653"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:55.497627" elapsed="0.027114"/>
+</kw>
+<arg>${MAIN_URL}</arg>
+<arg>${login_form}</arg>
+<status status="PASS" start="2025-03-03T02:14:53.881966" elapsed="1.642836"/>
+</kw>
+<kw name="Click the signup button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:55.525579" elapsed="0.013917"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:55.525337" elapsed="0.014247"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:55.540224" level="INFO">Clicking element 'xpath=(//a[contains(@href, 'create-account')])[2]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:55.540014" elapsed="0.048594"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:55.539738" elapsed="0.048990"/>
+</kw>
+<arg>${signup_btn}</arg>
+<status status="PASS" start="2025-03-03T02:14:55.525001" elapsed="0.063792"/>
+</kw>
+<kw name="Click the consent checkbox" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:55.589897" elapsed="0.425286"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:55.589401" elapsed="0.425897"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:56.015989" level="INFO">Clicking element 'css=label[for="termsAndConditions"] &gt; div:nth-child(1)'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:56.015808" elapsed="0.046606"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:56.015494" elapsed="0.047042"/>
+</kw>
+<arg>${consent}</arg>
+<status status="PASS" start="2025-03-03T02:14:55.589004" elapsed="0.473596"/>
+</kw>
+<kw name="Click the Continue button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:56.063519" elapsed="0.013259"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:56.063262" elapsed="0.013605"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:56.077504" level="INFO">Clicking element 'css=button[type='submit']'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:56.077325" elapsed="0.148403"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:56.077019" elapsed="0.148873"/>
+</kw>
+<arg>${signup_submit}</arg>
+<status status="PASS" start="2025-03-03T02:14:56.062874" elapsed="0.163113"/>
+</kw>
+<kw name="Validate text displayed" owner="asenso_app">
+<kw name="Validate text displayed" owner="signup_page">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${expected_text}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-03T02:14:56.227017" elapsed="0.421582"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:56.654920" level="INFO">Current page contains text 'We've sent an OTP'.</msg>
+<arg>${expected_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-03T02:14:56.648800" elapsed="0.006185"/>
+</kw>
+<arg>${expected_text}</arg>
+<status status="PASS" start="2025-03-03T02:14:56.226690" elapsed="0.428404"/>
+</kw>
+<arg>We've sent an OTP</arg>
+<status status="PASS" start="2025-03-03T02:14:56.226302" elapsed="0.428854"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:56.741613" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-03T02:14:56.655638" elapsed="0.086080"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-03T02:14:56.741895" elapsed="0.059456"/>
+</kw>
+<doc>Main web teardown</doc>
+<status status="PASS" start="2025-03-03T02:14:56.655383" elapsed="0.146083"/>
+</kw>
+<doc>Validate that the user can succesfully tick the consent checkbox</doc>
+<tag>registration</tag>
+<tag>UR-TC-012</tag>
+<status status="PASS" start="2025-03-03T02:14:53.522886" elapsed="3.278636"/>
+</test>
+<test id="s1-t10" name="Test Case 10: Validate User Registration" line="111">
+<kw name="Main Web Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2025-03-03T02:14:56.802734" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T02:14:56.802858" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/asenso-automation/asenso-automation/logs/screenshots"&gt;/home/runner/work/asenso-automation/asenso-automation/logs/screenshots&lt;/a&gt;'.</msg>
+<arg>logs/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="PASS" start="2025-03-03T02:14:56.802620" elapsed="0.000289"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>logs/screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2025-03-03T02:14:56.803020" elapsed="0.000186"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:56.803471" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:56.803326" elapsed="0.338435"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-03T02:14:57.141979" elapsed="0.018663"/>
+</kw>
+<arg>${BROWSER}</arg>
+<doc>Main web setup</doc>
+<status status="PASS" start="2025-03-03T02:14:56.802342" elapsed="0.358413"/>
+</kw>
+<kw name="Navigate to the login page" owner="asenso_app">
+<kw name="Navigate to login page" owner="login_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:57.161837" level="INFO">Opening url 'https://asenso-webapp.amihan.itg.nmblr.dev/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-03T02:14:57.161714" elapsed="1.631663"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-03-03T02:14:57.161454" elapsed="1.632062"/>
+</kw>
+<kw name="Verify page loaded" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:58.794062" elapsed="0.027722"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:58.793722" elapsed="0.028169"/>
+</kw>
+<arg>${MAIN_URL}</arg>
+<arg>${login_form}</arg>
+<status status="PASS" start="2025-03-03T02:14:57.160989" elapsed="1.660964"/>
+</kw>
+<kw name="Click the signup button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:58.822731" elapsed="0.013884"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:58.822491" elapsed="0.014220"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:58.837493" level="INFO">Clicking element 'xpath=(//a[contains(@href, 'create-account')])[2]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:58.837264" elapsed="0.048949"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:58.836878" elapsed="0.049454"/>
+</kw>
+<arg>${signup_btn}</arg>
+<status status="PASS" start="2025-03-03T02:14:58.822178" elapsed="0.064217"/>
+</kw>
+<kw name="Click the Citizenship dropdown" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:58.887253" elapsed="0.426883"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:58.886933" elapsed="0.427320"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:59.314952" level="INFO">Clicking element 'xpath=//*[contains(text(),'Citizenship')]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.314767" elapsed="0.046958"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.314454" elapsed="0.047410"/>
+</kw>
+<arg>${citizenship_dropdown}</arg>
+<status status="PASS" start="2025-03-03T02:14:58.886600" elapsed="0.475332"/>
+</kw>
+<kw name="Select Citizenship" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.362755" elapsed="0.012858"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.362507" elapsed="0.013184"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:59.376295" level="INFO">Clicking element 'xpath=//*[contains(text(),'PH')]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.376121" elapsed="0.047333"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.375833" elapsed="0.047797"/>
+</kw>
+<arg>${citizenship_ph}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.362173" elapsed="0.061559"/>
+</kw>
+<kw name="Enter" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.424803" elapsed="0.014557"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.424429" elapsed="0.015044"/>
+</kw>
+<kw name="Enter credential" owner="signup_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:59.440287" level="INFO">Typing text 'Reden' into text field 'css=input#firstName'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.440077" elapsed="0.078698"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.439712" elapsed="0.079187"/>
+</kw>
+<arg>${first_name}</arg>
+<arg>Reden</arg>
+<status status="PASS" start="2025-03-03T02:14:59.424001" elapsed="0.094964"/>
+</kw>
+<kw name="Enter" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.519785" elapsed="0.015857"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.519541" elapsed="0.016211"/>
+</kw>
+<kw name="Enter credential" owner="signup_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:59.536514" level="INFO">Typing text 'Capoquian' into text field 'css=input#middleName'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.536307" elapsed="0.065077"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.535943" elapsed="0.065601"/>
+</kw>
+<arg>${middle_name}</arg>
+<arg>Capoquian</arg>
+<status status="PASS" start="2025-03-03T02:14:59.519201" elapsed="0.082499"/>
+</kw>
+<kw name="Enter" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.602821" elapsed="0.014261"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.602476" elapsed="0.014696"/>
+</kw>
+<kw name="Enter credential" owner="signup_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:59.617810" level="INFO">Typing text 'Longcop' into text field 'css=input#lastName'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.617622" elapsed="0.060026"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.617327" elapsed="0.060448"/>
+</kw>
+<arg>${last_name}</arg>
+<arg>Longcop</arg>
+<status status="PASS" start="2025-03-03T02:14:59.601986" elapsed="0.075857"/>
+</kw>
+<kw name="Enter" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.678678" elapsed="0.014339"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.678423" elapsed="0.014737"/>
+</kw>
+<kw name="Enter credential" owner="signup_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:59.693898" level="INFO">Typing text 'James' into text field 'css=input#suffix'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.693691" elapsed="0.058236"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.693352" elapsed="0.058730"/>
+</kw>
+<arg>${suffix}</arg>
+<arg>James</arg>
+<status status="PASS" start="2025-03-03T02:14:59.678078" elapsed="0.074074"/>
+</kw>
+<kw name="Enter" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.752948" elapsed="0.014003"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.752700" elapsed="0.014366"/>
+</kw>
+<kw name="Enter credential" owner="signup_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:59.767735" level="INFO">Typing text '1231234123' into text field 'css=input[type='tel']'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.767536" elapsed="0.062614"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.767229" elapsed="0.063099"/>
+</kw>
+<arg>${phone_number}</arg>
+<arg>1231234123</arg>
+<status status="PASS" start="2025-03-03T02:14:59.752360" elapsed="0.078071"/>
+</kw>
+<kw name="Click the Citizenship dropdown" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.831632" elapsed="0.012672"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.831243" elapsed="0.013193"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:59.845168" level="INFO">Clicking element 'xpath=//*[contains(text(),'Citizenship')]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.844957" elapsed="0.045786"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.844642" elapsed="0.046226"/>
+</kw>
+<arg>${citizenship_dropdown}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.830729" elapsed="0.060204"/>
+</kw>
+<kw name="Select Citizenship" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.891768" elapsed="0.010284"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.891507" elapsed="0.010638"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:59.902750" level="INFO">Clicking element 'xpath=//*[contains(text(),'PH')]'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.902570" elapsed="0.047350"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.902298" elapsed="0.047779"/>
+</kw>
+<arg>${citizenship_ph}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.891175" elapsed="0.058972"/>
+</kw>
+<kw name="Click the consent checkbox" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.951192" elapsed="0.013666"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.950684" elapsed="0.014261"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:14:59.965593" level="INFO">Clicking element 'css=label[for="termsAndConditions"] &gt; div:nth-child(1)'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:14:59.965417" elapsed="0.047292"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.965136" elapsed="0.047699"/>
+</kw>
+<arg>${consent}</arg>
+<status status="PASS" start="2025-03-03T02:14:59.950357" elapsed="0.062542"/>
+</kw>
+<kw name="Click the Continue button" owner="asenso_app">
+<kw name="Verify page loaded" owner="signup_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-03T02:15:00.013737" elapsed="0.014761"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:15:00.013482" elapsed="0.015140"/>
+</kw>
+<kw name="Click button" owner="signup_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:15:00.029385" level="INFO">Clicking element 'css=button[type='submit']'.</msg>
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-03T02:15:00.029191" elapsed="0.050825"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-03-03T02:15:00.028837" elapsed="0.051332"/>
+</kw>
+<arg>${signup_submit}</arg>
+<status status="PASS" start="2025-03-03T02:15:00.013144" elapsed="0.067089"/>
+</kw>
+<kw name="Validate text displayed" owner="asenso_app">
+<kw name="Validate text displayed" owner="signup_page">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${expected_text}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-03T02:15:00.081130" elapsed="0.627916"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:15:00.715362" level="INFO">Current page contains text 'We've sent an OTP'.</msg>
+<arg>${expected_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-03T02:15:00.709255" elapsed="0.006167"/>
+</kw>
+<arg>${expected_text}</arg>
+<status status="PASS" start="2025-03-03T02:15:00.080815" elapsed="0.634734"/>
+</kw>
+<arg>We've sent an OTP</arg>
+<status status="PASS" start="2025-03-03T02:15:00.080469" elapsed="0.635143"/>
+</kw>
+<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-03T02:15:00.790767" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-03T02:15:00.716086" elapsed="0.074787"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-03T02:15:00.791079" elapsed="0.059204"/>
+</kw>
+<doc>Main web teardown</doc>
+<status status="PASS" start="2025-03-03T02:15:00.715826" elapsed="0.134573"/>
+</kw>
+<doc>Validate that the user can successfully submit the personal information details</doc>
+<tag>registration</tag>
+<tag>UR-TC-013</tag>
+<status status="PASS" start="2025-03-03T02:14:56.801855" elapsed="4.048598"/>
+</test>
+<status status="PASS" start="2025-03-03T02:14:20.951180" elapsed="39.899760"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="10" fail="0" skip="0">registration</stat>
+<stat pass="1" fail="0" skip="0">UR-TC-001</stat>
+<stat pass="1" fail="0" skip="0">UR-TC-003</stat>
+<stat pass="1" fail="0" skip="0">UR-TC-004</stat>
+<stat pass="1" fail="0" skip="0">UR-TC-007</stat>
+<stat pass="1" fail="0" skip="0">UR-TC-008</stat>
+<stat pass="1" fail="0" skip="0">UR-TC-009</stat>
+<stat pass="1" fail="0" skip="0">UR-TC-010</stat>
+<stat pass="1" fail="0" skip="0">UR-TC-011</stat>
+<stat pass="1" fail="0" skip="0">UR-TC-012</stat>
+<stat pass="1" fail="0" skip="0">UR-TC-013</stat>
+</tag>
+<suite>
+<stat name="Fe User Registration" id="s1" pass="10" fail="0" skip="0">Fe User Registration</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-03T02:14:21.101621" level="WARN">Imported resource file '/home/runner/work/asenso-automation/asenso-automation/source/pages/home_page.robot' is empty.</msg>
+<msg time="2025-03-03T02:14:21.117558" level="ERROR">Error in file '/home/runner/work/asenso-automation/asenso-automation/data/variables/public_variables.robot' on line 2: Resource file 'private_variables.robot' does not exist.</msg>
+</errors>
+</robot>
