@@ -3,7 +3,7 @@
 ${login_form}                  css=form:nth-child(1)
 ${email}=                      css=input#email
 ${password}=                   css=input#password
-${login_submit}=                     button[type='submit']
+${login_submit}=               button[type='submit']
 ${signup_btn}                  xpath=(//a[contains(@href, 'create-account')])[2]
 
 # signup page
